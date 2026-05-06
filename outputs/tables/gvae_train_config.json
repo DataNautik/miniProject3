@@ -1,0 +1,33 @@
+{
+  "model_config": {
+    "num_node_features": 7,
+    "max_nodes": 28,
+    "hidden_dim": 64,
+    "latent_dim": 32,
+    "num_message_passing_steps": 3,
+    "dropout": 0.0,
+    "use_residual": true,
+    "use_size_conditioning": true
+  },
+  "train_config": {
+    "seed": 42,
+    "device": "cpu",
+    "epochs": 100,
+    "batch_size": 32,
+    "learning_rate": 0.001,
+    "weight_decay": 1e-05,
+    "beta": 1.0,
+    "beta_start": 0.0,
+    "beta_warmup_epochs": 50,
+    "grad_clip_norm": 5.0,
+    "use_early_stopping": true,
+    "patience": 30,
+    "output_dir": "outputs",
+    "checkpoint_dir": "outputs/checkpoints",
+    "history_path": "outputs/tables/gvae_train_history.json",
+    "train_config_path": "outputs/tables/gvae_train_config.json",
+    "model_path": "outputs/checkpoints/best_gvae.pt"
+  },
+  "best_val_loss": 0.21080420911312103,
+  "best_epoch": 49
+}

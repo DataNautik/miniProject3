@@ -1,0 +1,65 @@
+{
+  "seed": 42,
+  "device": "cpu",
+  "num_samples": 1000,
+  "train_new_model": true,
+  "model_config": {
+    "num_node_features": 7,
+    "max_nodes": 28,
+    "hidden_dim": 64,
+    "latent_dim": 32,
+    "num_message_passing_steps": 3,
+    "dropout": 0.0,
+    "use_residual": true,
+    "use_size_conditioning": true
+  },
+  "train_config": {
+    "seed": 42,
+    "device": "cpu",
+    "epochs": 100,
+    "batch_size": 32,
+    "learning_rate": 0.001,
+    "weight_decay": 1e-05,
+    "beta": 1.0,
+    "beta_start": 0.0,
+    "beta_warmup_epochs": 50,
+    "grad_clip_norm": 5.0,
+    "use_early_stopping": true,
+    "patience": 30,
+    "output_dir": "outputs",
+    "checkpoint_dir": "outputs/checkpoints",
+    "history_path": "outputs/tables/gvae_train_history.json",
+    "train_config_path": "outputs/tables/gvae_train_config.json",
+    "model_path": "outputs/checkpoints/best_gvae.pt"
+  },
+  "baseline_metrics": {
+    "num_generated": 1000,
+    "num_unique": 997,
+    "num_novel": 1000,
+    "num_novel_and_unique": 997,
+    "unique_fraction": 0.997,
+    "novel_fraction": 1.0,
+    "novel_and_unique_fraction": 0.997
+  },
+  "deep_metrics": {
+    "num_generated": 1000,
+    "num_unique": 1000,
+    "num_novel": 1000,
+    "num_novel_and_unique": 1000,
+    "unique_fraction": 1.0,
+    "novel_fraction": 1.0,
+    "novel_and_unique_fraction": 1.0
+  },
+  "artifacts": {
+    "baseline_samples": "outputs/samples/baseline_er_samples.pt",
+    "baseline_metadata": "outputs/tables/baseline_er_metadata.json",
+    "deep_samples": "outputs/samples/gvae_generated_samples.pt",
+    "deep_generation_metadata": "outputs/tables/gvae_generation_metadata.json",
+    "evaluation_metrics": "outputs/tables/evaluation_metrics.json",
+    "graph_statistics": "outputs/tables/graph_statistics.json",
+    "figure": "outputs/figures/graph_statistics_3x3.png",
+    "bins_metadata": "outputs/tables/graph_statistics_bins.json",
+    "training_history_figure": "outputs/figures/training_history.png",
+    "checkpoint": "outputs/checkpoints/best_gvae.pt"
+  }
+}
